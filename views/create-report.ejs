@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+<form action="/createreport" method="post"  class="background" enctype="multipart/form-data" >
+
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name ="title" class="form-control">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description" rows="7"></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="file">Upload Image:</label>
+        <input type="file" name="img" id="">
+    </div>
+    <button class="btn btn-success btn-align-right" type="submit">Report</button>
+</form>
+
+
+<script src="script.js"></script>

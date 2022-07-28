@@ -1,0 +1,53 @@
+
+<%- include('partials/header') -%>
+
+
+<!-- main body -->
+<div class="main-body">
+    <!-- map -->
+    <div class="maps">
+        <img src="assets/ktm.png" alt="">
+    </div>
+    <!-- report-body -->
+    <div class="report-body">
+        <!-- reports -->
+     <%reports.forEach((report)=>{%>
+        <div class="reports">
+                <div class="reporter">
+                    <div>
+                        <img src="assets/ktm.png" alt="">
+                        <h3>Rohan Maharjan</h3>
+                    </div>
+                    <div>
+                        <ul id="more-vert-effect">
+                            <li> <span class="material-icons" id="close">
+                                    close
+                                </span>
+                            </li>
+                            <li>Delete</li>
+                            <li>Edit</li>
+                        </ul>
+                        <span class="material-icons" id="more-vert">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+                
+                <h1>
+                    <%=report.title%>
+                </h1>
+                <div class="report-content">
+                    <p>
+                        <%=report.description.substring(0,300)%>
+                        <a href=""><b>. . . Read More</b> </a>
+                    </p>
+                    <img src="<%=report.cloudinary_url%>" >
+                </div>
+           
+        </div>
+    <%})%>
+        
+    </div>
+</div>
+
+<script src="/script.js"></script> 

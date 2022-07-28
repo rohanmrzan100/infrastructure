@@ -1,0 +1,20 @@
+<%- include('partials/header') -%>
+
+
+<!-- main page -->
+<div  class="main-report">
+    <h1><%=title%></h1>
+    <div class="report-main">
+        <p><%=description%></p>
+        <img  class="report-img" src="<%=cloudinary_url%>">
+    </div>
+
+    <div   class="btn-align-right btn-grp">
+        <form action="/report/<%=report_id%>" method="post">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+        <a href="/report/<%=report_id%>/edit"><button class="btn btn-info">Edit</button></a>
+        <a href="/home"><button class="btn btn-secondary">Go BacK</button></a>
+    </div>
+    
+</div>

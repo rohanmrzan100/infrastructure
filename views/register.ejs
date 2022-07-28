@@ -1,0 +1,48 @@
+<%-include('partials/logsignHeader')-%>
+
+
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              
+              <form method="post" action="/register" class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 class="fw-bold mb-2">Register to Infrastructure Ambulance</h2>
+             
+               
+                <div class=" input form-outline form-white mb-4">
+                  <input type="email" name="email" id="email" class="form-control"  />
+                  <label class="form-label" for="email">Enter email:</label>
+                </div>
+                <div class=" input form-outline form-white mb-4">
+                  <input type="username" name="username" id="username" class="form-control form-control-lg" />
+                  <label class="form-label" for="username">Enter username:</label>
+                </div>
+                
+                <div class=" input form-outline form-white mb-4">
+                  <input type="text" name="password" id="typePasswordX" class="form-control form-control-lg" />
+                  <label class="form-label" for="typePasswordX"> Create Password:</label>
+                </div>
+  
+            
+                <p style="color: green;font-weight: bold;"><%= registerText%></p>
+                <button class="btnn  btn-lg" type="submit">Submit</button>
+                   
+           
+              </form>
+  
+              <div>
+                <p class="mb-0">ALready have an account? <a href="/login" class=" text  fw-bold">Log in</a>
+                </p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
