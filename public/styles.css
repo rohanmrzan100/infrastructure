@@ -256,8 +256,10 @@ iframe{
 
 }
 .background img{
+  
     height: 40%;
     width: auto;
+    max-width: 90%;
     margin-bottom:200px;
   
 

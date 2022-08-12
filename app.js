@@ -232,6 +232,25 @@ app.route('/report/:report_id/edit')
                 console.log(err);
             }
         })
+    })
+    .post((req,res)=>{
+        reportModel.findOneAndUpdate(
+            {_id:req.params.report_id},
+            {
+                 title:req.body.title,
+                 description:req.body.description
+            },
+            {new: true},
+            (err, doc) => {
+                if (err) {
+                    console.log("Something wrong when updating data!");
+                }
+                else{
+                     console.log(doc);
+                     res.redirect(`/report/${req.params.report_id}`)
+                }
+            }
+        )
        
     })
  
