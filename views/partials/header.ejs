@@ -12,8 +12,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@300&family=Rubik:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet"/>
+    
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
    
     <link rel="stylesheet" href="/styles.css">
+    
     <title>InfrastructureAmbulance</title>
 </head>
 <body>
@@ -21,14 +26,27 @@
         <div class="logo">
                <a href="/home"> <p>Infrastructure</p><p>Ambulance</p></a>
          </div>
-        <ul>
+        <ul id="ul">
+            <li>
+                <a href="">
+                    <span class="material-icons" id="close"onclick="hideMenu()";
+                    style="transform: scale(2);">
+                         close
+                    </span>
+                </a>
+            </li>
             <li><a href="/home">Home</a></li>
-           
             <li><a href="/contact">Contact Us</a></li>
             <li><a href="/createreport">Report Complaint</a></li>
-            <li><a href="/about">My Profile</a></li>
+            <li><a href="/myprofile">My Profile</a></li>
+           
            
         </ul>
+        
+            <span class="material-icons" id="menu" onclick="showMenu()"; style="transform: scale(2);">
+                 menu
+            </span>
+       
     </nav>  
      
 </body>

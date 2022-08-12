@@ -1,22 +1,39 @@
-<%- include('partials/header') -%>
-<form action="/createreport" method="post"  class="background" enctype="multipart/form-data" >
-
-    <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name ="title" class="form-control">
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-control" id="description" name="description" rows="7"></textarea>
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="file">Upload Image:</label>
-        <input type="file" name="img" id="">
-    </div>
-    <button class="btn btn-success btn-align-right" type="submit">Report</button>
-</form>
+<%-include('partials/header')-%>
 
 
-<script src="script.js"></script>
+
+   <form class="create-report"  id="create-report" action="/createreport" method="post" enctype="multipart/form-data">
+        <div class="map-create-report">
+            <div id="osm-map" style="border:solid 5px black;"></div>
+        </div>
+        
+        <div  class="background file-report" >
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" name ="title" class="form-control">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description"  rows="7"></textarea>
+            </div>
+           
+            <br>
+            <input  name ='latlang' class="latlong" readonly>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="file">Upload Image:</label>
+                <input type="file" name="img" >
+            </div>
+            <br>
+           
+             
+           
+            <button type="submit" class="btn-align-right  btn btn-success">submit</button>
+        </div>
+
+
+   </form>
+
+   <script src="/script.js"></script>

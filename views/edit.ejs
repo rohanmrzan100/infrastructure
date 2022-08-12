@@ -1,19 +1,19 @@
 <%- include('partials/header') -%>
-<form action="/report/<%=report_id%>/edit" method="post"  class="main-create-report">
+<form action="/report/<%=report_id%>/edit" method="post"  class="background" >
 
     <div class="form-group">
-        <label for="Title">Title:</label>
-        <input type="text" class="form-control" id="Title" value="<%=title%>" name="title">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name ="title" value="<%=title%>" class="form-control">
     </div>
     <br>
     <div class="form-group">
-        <label for="comment">Description:</label>
-        <textarea class="form-control" rows="10" cols="40" id="comment" name="description" >
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description"  rows="7">
             <%=description%>
         </textarea>
-    </div><br>
-   
-
-    <button class="btn btnn  btn-lg" type="submit">Done</button>
+    </div>
     <br>
+    <button class="btn btn-success btn-align-right" type="submit">Edit</button>
 </form>
+
+<script src="/script.js"></script>

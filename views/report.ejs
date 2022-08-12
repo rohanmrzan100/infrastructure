@@ -1,20 +1,57 @@
 <%- include('partials/header') -%>
+ <!-- MDB -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+<script>
 
 
+
+</script>
 <!-- main page -->
-<div  class="main-report">
-    <h1><%=title%></h1>
-    <div class="report-main">
-        <p><%=description%></p>
-        <img  class="report-img" src="<%=cloudinary_url%>">
-    </div>
+<div class="page">
+  <div class=" column map" >
+    <iframe 
+  width="300" 
+  height="170" 
+  frameborder="0" 
+  scrolling="no" 
+  marginheight="0" 
+  marginwidth="0" 
+  src="https://maps.google.com/maps?q=<%=lat%>,<%=long%>&hl=en&z=14&amp;output=embed"
+ >
+ </iframe>
+  </div>
 
-    <div   class="btn-align-right btn-grp">
-        <form action="/report/<%=report_id%>" method="post">
-            <button class="btn btn-danger">Delete</button>
-        </form>
-        <a href="/report/<%=report_id%>/edit"><button class="btn btn-info">Edit</button></a>
-        <a href="/home"><button class="btn btn-secondary">Go BacK</button></a>
+
+  <div class="background column">
+    <h1><%=title%></h1>
+    <p><%=description%></p>
+    <a href="<%=cloudinary_url%>"><img src="<%=cloudinary_url%>" alt=""></a>
+    <div  class="btn-align-right">
+       <a href="/report/<%=report_id%>/edit"><button class="btn btn-success">Edit</button></a>
+       <button type="button" class="btn btn-danger" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Delete</button>
+       <a href="/home"><button class="btn btn-secondary">Go Back</button></a>
     </div>
-    
+  </div>
 </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to delete this report?</p>
+    </div>
+    <form method="post" action="/report/<%=report_id%>" class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">No</button>
+      <button type="submit" class="btn btn-danger"  >Yes</button>
+    </form>
+  </div>
+</div>
+
+<script src="/script.js"></script>
